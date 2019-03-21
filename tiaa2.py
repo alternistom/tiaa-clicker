@@ -6,6 +6,7 @@ import io
 # v1.0 initial release
 # v2.0 now only selects table not the whole damn monstrous page
 # v2.1 changed 0.2 sleep to 0.4 for proper page load and changed the while to a for loop based on page number
+# v2.2 added clicks to step to next then prev page to wake the table, modified the selection so now it selects the page number as well, down the road implement to chack is page number is right as it is advancing on pages
 
 print( """
 
@@ -36,14 +37,19 @@ print( """
 
 
 tobefilename = input("► What should we name out txt file? ")
-pages = input("► How many pages of report? ")
+
+pyautogui.doubleClick(1204, 151)
+pyautogui.hotkey("ctrl", "c")
+pages = pyperclip.paste()
+
+#pages = input("► How many pages of report? ")
 
 actualpages = int(pages)
 
 filename = tobefilename + ".txt"
 f = open(filename, "a", encoding="utf-8")
 
-pyautogui.click(1479, 434) #activates TIAA window
+#pyautogui.click(1479, 434) #activates TIAA window
 
 
 print("")
@@ -54,10 +60,16 @@ time.sleep(1)
 
 savedPagesCounter = 1
 
+pyautogui.click(1242, 150)
+time.sleep(1)
+pyautogui.click(1136, 151)
+time.sleep(1)
+
+
 for _ in range(int(pages)):
 
 #while actualpages >= 0:
-	pyautogui.click(799, 191)
+	pyautogui.click(801, 139)
 	pyautogui.dragTo(1270, 1166, duration = 0)
 	pyautogui.hotkey("ctrl", "c")
 	pyautogui.click(1479, 434)
