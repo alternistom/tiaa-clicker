@@ -6,7 +6,7 @@ import io
 # v1.0 initial release
 # v2.0 now only selects table not the whole damn monstrous page
 # v2.1 changed 0.2 sleep to 0.4 for proper page load and changed the while to a for loop based on page number
-# v2.2 added clicks to step to next then prev page to wake the table, modified the selection so now it selects the page number as well, down the road implement to chack is page number is right as it is advancing on pages
+# v2.2 added clicks to step to next then prev page to wake the table, modified the selection so now it selects the page number as well, down the road implement to chack is page number is right as it is advancing on pages, as well as page number is read from page instead of user input
 
 print( """
 
